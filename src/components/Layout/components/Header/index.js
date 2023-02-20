@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
+import Button from '~/components/Button';
 import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
@@ -19,7 +20,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
+            setSearchResult([]);
         }, 0);
     }, []);
 
@@ -66,7 +67,10 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button text>Upload</Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </header>
     );
